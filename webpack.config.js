@@ -21,9 +21,13 @@ module.exports = {
   devtool: "development" ? "cheap-inline-module-source-map" : null,
 
   plugins: [
+    new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({ 
       NODE_ENV: JSON.stringify(NODE_ENV)
-    })
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "common"
+    }),
   ],
 
   module: {
