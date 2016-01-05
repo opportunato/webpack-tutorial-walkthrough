@@ -33,7 +33,7 @@ module.exports = {
 }
 
 if (NODE_ENV == 'production') {
-  module.exports.plugins.push({
+  module.exports.plugins.push(
     new webpack.optimize.UglifyPlugin({
       compress: {
         warnings: false,
@@ -41,5 +41,5 @@ if (NODE_ENV == 'production') {
         unsafe: true
       }
     })
-  })
+  );
 }
